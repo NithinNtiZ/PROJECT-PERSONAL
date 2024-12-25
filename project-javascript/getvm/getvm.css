@@ -1,0 +1,99 @@
+body {
+  /* Text & Font Styling */
+  color: #333; /* Text color */
+  font-family: Arial, sans-serif; /* Font family */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+
+  /* font-style: italic; Italic text */
+  text-transform: uppercase; /* Convert text to uppercase */
+  text-align: center; /* Center align text */
+  line-height: 1.5; /* Line height */
+
+  /* Box Model */
+  margin: 10px auto; /* Outer spacing */
+  padding: 8px 15px; /* Inner spacing */
+  width: 300px; /* Fixed width */
+  height: auto; /* Automatic height */
+  border: 2px solid #697785; /* Blue border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+
+  /* Display & Positioning */
+  text-align: center; /* Align text inside the label */
+
+  /* Interaction & Effects */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth effect on hover */
+}
+/* body:hover {
+        transform: scale(1.05);
+} */
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+input {
+  width: 90%;
+  padding: 5px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: wavy;
+}
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 2px;
+}
+button:hover {
+  background-color: #4efa3a;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+
+.popup-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: black;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Close button styling */
+.close-btn {
+  background: #4efa3a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+.close-btn:hover {
+  background: #ff3535;
+}
