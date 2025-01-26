@@ -99,7 +99,7 @@ sudo systemctl enable containerd
 sudo systemctl restart kubelet.service
 sudo systemctl status kubelet.service
 
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --control-plane-endpoint=10.192.36.5:6443 --apiserver-advertise-address=10.192.36.5 --apiserver-cert-extra-sans=k8master.supportlab.infoblox.com
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --control-plane-endpoint=10.192.36.5:6443 --apiserver-advertise-address=10.192.36.5 --apiserver-cert-extra-sans=k8master.8core.com
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -118,3 +118,9 @@ kubeadm init phase upload-certs --upload-certs
  kubeadm token create --print-join-command --certificate-key 995179030861bb03af133ac124ad7fd536ab2302169eb42be0a06109a26d8723
 kubectl edit cm -n kube-system kubeadm-config
         controlPlaneEndpoint : "10.192.36.5:6443"
+
+
+# NGINX ingress controller for kubernetes
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/refs/heads/release-1.10/deploy/static/provider/baremetal/deploy.yaml
+
