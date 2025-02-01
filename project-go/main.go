@@ -4,16 +4,26 @@ import "fmt"
 
 func main () {
 	var username string 
-	fmt.Println("Enter  your name:")
-	fmt.Scan(&username)
-	fmt.Printf("%s Hello World \n", username)
-
-
-
-	num1 := 1
-	num2 := 2
-	sum := num1 + num2
-	var list [50]int
-	list[0] = sum
-	fmt.Printf("Sum of %d and %d is %d", num1, num2, list[0])
-}
+	var firstname string 
+	var lastname string 
+	var  total int = 50
+	var  num1 int
+	var list []int
+	
+	
+	for {
+		
+		fmt.Println("Enter  your first name: ")
+		fmt.Scan(&firstname)
+		fmt.Println("Enter  your last name: ")
+		fmt.Scan(&lastname)
+		fmt.Printf("Hello  %s\n", username)
+		fmt.Printf("Hello  %s %s\n", firstname, lastname)
+		fmt.Printf("enter no of tickets you want to buy: ")
+		fmt.Scan(&num1)
+		total = total - num1
+		list = append(list, total)
+		fmt.Printf("Your have booked %d tickets, Balance no of ticket is %d\n", num1 , total)
+	}
+	
+} 
