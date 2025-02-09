@@ -8,19 +8,16 @@ import (
 )
 
 func main() {
-	// Send a GET request to the URL
-	resp, err := http.Get("https://ifconfig.me")
+	res, err := http.Get("http://ifconfig.me/all.json")
 	if err != nil {
-		log.Fatalf("Error sending request: %v", err)
+		log.Fatal(err)
 	}
-	defer resp.Body.Close()
-
-	// Read the response body
-	body, err := io.ReadAll(resp.Body) // Using io.ReadAll instead of ioutil.ReadAll
+	defer res.Body.Close()
+	
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
-		log.Fatalf("Error reading response: %v", err)
+		log.Fatal(err)
 	}
-
-	// Print the response body (IP address or other info)
-	fmt.Println(string(body))
+	
+	fmt.Printf("%s", body)
 }
